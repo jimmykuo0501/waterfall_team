@@ -1,0 +1,110 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/background.png') no-repeat center center fixed; /* 路徑指向背景圖 */
+    background-size: cover; /* 讓圖片充滿頁面 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+/* 動畫定義 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 遮罩效果 */
+body::before {
+    content: "家具租賃 管理方登入"; /* 標題文字 */
+    display: block;
+    font-size: 60px; /* 標題文字大小 */
+    font-weight: bold; /* 加粗標題 */
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* 白色透明度 */
+    z-index: 1;
+    opacity: 0; /* 初始透明 */
+    animation: fadeIn 2s ease-in-out forwards; /* 動畫效果 */
+}
+
+form {
+    background: rgb(255, 255, 255, 0.8); /* 半透明白色背景 */
+    padding: 40px 70px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 80%;
+    height: 40%;
+    position: relative; /* 保證在遮罩之上 */
+    z-index: 2;
+    opacity: 0; /* 初始透明 */
+    animation: fadeIn 2s ease-in-out forwards; /* 動畫效果 */
+}
+
+table {
+    width: 100%;
+    height: 95%;
+    margin: 0 auto; /* 讓表格水平置中 */
+    border-spacing: 10px; /* 設定表格內邊距 */
+    border-collapse: collapse;
+    border-radius: 10px; /* 圓邊框 */
+    opacity: 0; /* 初始透明 */
+    animation: fadeIn 2s ease-in-out forwards; /* 動畫效果 */
+}
+
+table td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* 修改表單中的文字樣式 */
+table td font{
+    font-size: 20px; /* 表單文字大小 */
+    font-weight:bolder;
+    padding: 20px; /* 增加內邊距，讓文字與邊界保持距離 */
+    color: #333; /* 深灰色 */
+    font-family: Arial, sans-serif; /* 改變字體 */
+}
+
+input[type="text"], input[type="password"] {
+    font-size: 15px; /* 表單文字大小 */
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 3px solid #ddd;     /*外框粗度*/
+    border-radius:30px;           /*外框圓角*/
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 85%;
+    padding: 10px;
+    font-weight:bolder;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background: #0056b3;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+}
